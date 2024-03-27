@@ -12,7 +12,7 @@ source:
     - unvendor.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
   ignore_run_exports_from:
     # cmake cannot find boost without libboost-devel but it is not needed at runtime
@@ -23,6 +23,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - pkg-config
     - cmake
     - make
@@ -48,7 +49,6 @@ requirements:
     - python
     - numpy
     - pysdl2
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   imports:
