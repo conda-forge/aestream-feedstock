@@ -1,5 +1,5 @@
 {% set name = "aestream" %}
-{% set version = "0.6.3" %}
+{% set version = "0.6.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aestream-{{ version }}.tar.gz
-  sha256: eeaa9dc49465bf25de80a549b78ee767cf3b34c1047caeb42be5e089d003d0ad
+  sha256: 2ce8f653bf7a3e44873ea9924a68bb696fbcfeb30fb10f8727362c8e095d99c5
   patches:
     - unvendor.patch
 
 build:
-  number: 4
+  number: 0
   skip: true  # [win]
   ignore_run_exports_from:
     # cmake cannot find boost without libboost-devel but it is not needed at runtime
