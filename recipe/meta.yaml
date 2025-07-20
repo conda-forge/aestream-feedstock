@@ -39,6 +39,7 @@ requirements:
     - setuptools-scm
     - pip
     - libcaer
+    - libopencv
     - flatbuffers
     - lz4-c
     - cli11
