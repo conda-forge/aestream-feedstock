@@ -13,9 +13,9 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '18'
+- '19'
 flatbuffers:
-- 24.12.23
+- 25.2.10
 libboost_headers:
 - '1.86'
 lz4_c:
