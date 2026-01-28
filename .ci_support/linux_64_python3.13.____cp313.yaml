@@ -19,7 +19,7 @@ libboost_devel:
 libboost_headers:
 - '1.88'
 libopencv:
-- 4.12.0
+- 4.13.0
 lz4_c:
 - '1.10'
 pin_run_as_build:
