@@ -15,9 +15,9 @@ docker_image:
 flatbuffers:
 - 25.9.23
 libboost_devel:
-- '1.88'
+- '1.90'
 libboost_headers:
-- '1.88'
+- '1.90'
 libopencv:
 - 4.13.0
 lz4_c:
