@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aestream-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/aestream-{{ version }}.tar.gz
   sha256: 2ce8f653bf7a3e44873ea9924a68bb696fbcfeb30fb10f8727362c8e095d99c5
   patches:
     - unvendor.patch
 
 build:
-  number: 12
+  number: 13
   skip: true  # [win]
 
 requirements:
