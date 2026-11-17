@@ -12,14 +12,14 @@ source:
     - unvendor.patch
 
 build:
-  number: 14
+  number: 15
   skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
-    - pkg-config
+    - pkgconf
     - cmake
     - make
     - python                                 # [build_platform != target_platform]

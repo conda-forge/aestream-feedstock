@@ -17,7 +17,7 @@ flatbuffers:
 libboost_headers:
 - '1.90'
 libopencv:
-- 5.0.0
+- 5.1.0
 lz4_c:
 - '1.11'
 macos_machine:
