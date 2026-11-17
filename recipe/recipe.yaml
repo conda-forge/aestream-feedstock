@@ -1,0 +1,70 @@
+schema_version: 1
+
+context:
+  version: "0.6.4"
+
+package:
+  name: aestream
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/a/aestream/aestream-${{ version }}.tar.gz
+  sha256: 2ce8f653bf7a3e44873ea9924a68bb696fbcfeb30fb10f8727362c8e095d99c5
+  patches:
+    - unvendor.patch
+
+build:
+  number: 16
+  skip: win
+  dynamic_linking:
+    overlinking_behavior: error
+
+requirements:
+  build:
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - pkgconf
+    - cmake
+    - make
+    - if: build_platform != target_platform
+      then:
+        - python
+        - pip
+        - scikit-build-core
+        - cross-python_${{ target_platform }}
+        - nanobind
+  host:
+    - scikit-build-core
+    - python
+    - nanobind
+    - setuptools-scm
+    - pip
+    - libcaer
+    - libopencv
+    - flatbuffers
+    - lz4-c
+    - cli11
+    - sdl2
+    - if: linux
+      then: libboost-devel
+    - libboost-headers
+  run:
+    - python
+    - numpy
+    - pysdl2
+
+tests:
+  - python:
+      imports:
+        - aestream
+      pip_check: true
+
+about:
+  summary: Streaming library for Address-Event Representation (AER) data
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/aestream/aestream
+
+extra:
+  recipe-maintainers:
+    - Tobias-Fischer
